@@ -1,5 +1,25 @@
 {
-  "name": "SignCheck",
+  "name": "sign-check",
   "version": "0.0.1",
-  
+  "description": "Check specified path sign with native current OS signing tools.",
+  "main": "index.js",
+  "keywords": [
+    "sign",
+    "signtool",
+    "check",
+    "utility",
+    "codesign",
+    "verify"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kami4ka/SignCheck.git"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/kami4ka/SignCheck/issues"
+  },
+  "engines": {
+    "node": ">=4.0.0"
+  }
 }
