@@ -6,6 +6,10 @@ var win32 = 'win32';
 var darwin = 'darwin';
 
 function checkWin(path, callback) {
+    if (typeof callback !== 'function') {
+        return;
+    }
+
     if (!path.existsSync(path)) {
         callback(null, 'No such path');
     }
@@ -16,6 +20,10 @@ function checkWin(path, callback) {
 }
 
 function checkMac(path, callback) {
+    if (typeof callback !== 'function') {
+        return;
+    }
+
     if (!path.existsSync(path)) {
         callback(null, 'No such path');
     }

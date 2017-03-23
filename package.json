@@ -15,11 +15,25 @@
     "type": "git",
     "url": "https://github.com/kami4ka/SignCheck.git"
   },
+  "scripts": {
+    "test": "jest"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "jest-cli": "^13.2.3"
+  },
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/kami4ka/SignCheck/issues"
   },
   "engines": {
     "node": ">=4.0.0"
+  },
+  "jest": {
+    "collectCoverage": true,
+    "collectCoverageOnlyFrom": {
+      "index.js": true
+    },
+    "testRegex": "(/tests/.*|\\.(test|spec))\\.js$"
   }
 }
