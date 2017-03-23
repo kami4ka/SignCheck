@@ -1,50 +1,53 @@
-var exec = require('child_process').exec;
-var os = require('os');
-var path = require('path');
+'use strict';
 
-var win32 = 'win32';
-var darwin = 'darwin';
+const exec = require('child_process').exec;
+const os = require('os');
+const path = require('path');
 
-function checkWin(path, callback) {
-    if (typeof callback !== 'function') {
-        return;
+const win32 = 'win32';
+const darwin = 'darwin';
+
+class SignCheck {
+    static checkWin(path, callback) {
+        if (typeof callback !== 'function') {
+            return;
+        }
+
+        if (!path.existsSync(path)) {
+            callback('No such path');
+        }
+
+        if (os.platform() !== win32) {
+            callback('Can not check Win sign on current platform');
+        }
     }
 
-    if (!path.existsSync(path)) {
-        callback(null, 'No such path');
-    }
+    static checkMac(path, callback) {
+        if (typeof callback !== 'function') {
+            return;
+        }
 
-    if (os.platform() !== win32) {
-        callback(null, 'Can not check Win sign on current platform');
+        if (!path.existsSync(path)) {
+            callback('No such path');
+        }
+
+        if (os.platform() !== darwin) {
+            callback('Can not check macOS sign on current platform');
+        }
+
+        try {
+            const execProcess = exec('codesign --verify "' + path + '"');
+            execProcess.on('exit', (code) => {
+                if (code === 0) {
+                    callback(null, true);
+                } else {
+                    callback(null, false);
+                }
+            });
+        } catch (error) {
+            callback('Unable to verify file sign ' + error);
+        }
     }
 }
 
-function checkMac(path, callback) {
-    if (typeof callback !== 'function') {
-        return;
-    }
-
-    if (!path.existsSync(path)) {
-        callback(null, 'No such path');
-    }
-
-    if (os.platform() !== darwin) {
-        callback(null, 'Can not check macOS sign on current platform');
-    }
-
-    try {
-        var execProcess = exec('codesign --verify "' + path + '"');
-        execProcess.on('exit', function (code) {
-            if (code === 0) {
-                callback(true);
-            } else {
-                callback(false);
-            }
-        });
-    } catch (error) {
-        callback(null, 'Unable to verify file sign ' + error);
-    }
-}
-
-module.exports.checkWin = checkWin;
-module.exports.checkMac = checkMac;
+module.exports = SignCheck;

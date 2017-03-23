@@ -1,14 +1,17 @@
+'use strict';
+
 jest.autoMockOff();
 
 describe('Sign Check', function() {
-    var checkWin = require('../index').checkWin;
-    var checkMac = require('../index').checkMac;
+    const SignCheck = require('../index');
 
     it('should have described methods', function() {
-        expect(checkWin).not.toEqual(null);
-        expect(checkWin).toBeDefined();
+        expect(SignCheck.checkWin).not.toEqual(null);
+        expect(SignCheck.checkWin).toBeDefined();
 
-        expect(checkMac).not.toEqual(null);
-        expect(checkMac).toBeDefined();
+        expect(SignCheck.checkMac).not.toEqual(null);
+        expect(SignCheck.checkMac).toBeDefined();
     });
+
+    it('')
 });
