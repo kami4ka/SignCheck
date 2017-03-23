@@ -2,7 +2,7 @@
 
 const exec = require('child_process').exec;
 const os = require('os');
-const path = require('path');
+const fs = require('fs');
 
 const win32 = 'win32';
 const darwin = 'darwin';
@@ -13,12 +13,14 @@ class SignCheck {
             return;
         }
 
-        if (!path.existsSync(path)) {
+        if (!fs.existsSync(path)) {
             callback('No such path');
+            return;
         }
 
         if (os.platform() !== win32) {
             callback('Can not check Win sign on current platform');
+            return;
         }
     }
 
@@ -27,12 +29,14 @@ class SignCheck {
             return;
         }
 
-        if (!path.existsSync(path)) {
+        if (!fs.existsSync(path)) {
             callback('No such path');
+            return;
         }
 
         if (os.platform() !== darwin) {
             callback('Can not check macOS sign on current platform');
+            return;
         }
 
         try {
