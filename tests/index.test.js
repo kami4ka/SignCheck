@@ -17,7 +17,6 @@ describe('Sign Check', function() {
        SignCheck.checkWin('C:\\wrong\\path', (err, isSigned) => {
            expect(err).toEqual('No such path');
            expect(isSigned).toBeUndefined();
-
            done();
        });
     });
