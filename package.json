@@ -2,7 +2,7 @@
   "name": "sign-check",
   "version": "0.0.1",
   "description": "Check specified path sign with native current OS signing tools.",
-  "main": "index.js",
+  "main": "lib/index.js",
   "keywords": [
     "sign",
     "signtool",
@@ -16,7 +16,7 @@
     "url": "https://github.com/kami4ka/SignCheck.git"
   },
   "scripts": {
-    "test": "jest"
+    "test": "jest --no-cache --bail --verbose"
   },
   "dependencies": {},
   "devDependencies": {
@@ -32,8 +32,7 @@
   "jest": {
     "collectCoverage": true,
     "collectCoverageOnlyFrom": {
-      "index.js": true
-    },
-    "testRegex": "(/tests/.*|\\.(test|spec))\\.js$"
+      "lib/index.js": true
+    }
   }
 }

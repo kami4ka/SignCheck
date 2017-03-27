@@ -6,3 +6,8 @@ node_js:
   - "4"
 os:
   - osx
+sudo: required
+install:
+  - npm i
+script:
+  - npm test
