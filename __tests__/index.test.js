@@ -1,7 +1,6 @@
 'use strict';
 
 jest.autoMockOff();
-jest.dontMock('bluebird');
 
 const constants = require('../lib/constants');
 const unsignedPath = `${__dirname}${constants.test.unsignedPath}`;

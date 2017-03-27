@@ -18,9 +18,7 @@
   "scripts": {
     "test": "jest --no-cache --bail --verbose"
   },
-  "dependencies": {
-    "bluebird": "^3.5.0"
-  },
+  "dependencies": {},
   "devDependencies": {
     "jest-cli": "^13.2.3"
   },

@@ -1,7 +1,6 @@
 'use strict';
 
 jest.autoMockOff();
-jest.dontMock('bluebird');
 
 const SignCheck = require('../lib/index');
 const constants = require('../lib/constants');
