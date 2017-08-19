@@ -35,5 +35,8 @@
     "collectCoverageOnlyFrom": {
       "lib/index.js": true
     }
-  }
+  },
+  "bin": {
+    "sign-check": "./lib/cli.js"
+  },
 }
