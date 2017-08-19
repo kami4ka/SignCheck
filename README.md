@@ -32,3 +32,7 @@ SignCheck.checkWin(somePath).then(
 ## Notes
 
 For Win verification used [sample](https://msdn.microsoft.com/en-us/library/aa382384(VS.85).aspx) code compiled to binary.
+
+For detailed info about Windows tool error codes see: `lib/bin/README.md`
+
+For detailed info about macOS tool see [official doc](https://developer.apple.com/legacy/library/documentation/Darwin/Reference/ManPages/man1/codesign.1.html)
