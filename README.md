@@ -4,5 +4,31 @@
 
 Check specified path sign with native current OS signing tools
 
-# Usage
+## Usage
 
+Get the package via NPM: `npm install sign-check`.
+
+```js
+const SignCheck = require('sign-check');
+
+const somePath = 'some/path/for/test';
+
+// for macOS
+SignCheck.checkMac(somePath).then(
+    (isSigned) => {
+        console.log('File sign status ' + isSigned);
+    },
+    (error) => {
+        console.log(error);
+    }
+);
+
+//Same behavior for win function
+SignCheck.checkWin(somePath).then(
+...
+);
+```
+
+## Notes
+
+For Win verification used [sample](https://msdn.microsoft.com/en-us/library/aa382384(VS.85).aspx) code compiled to binary.
