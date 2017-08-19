@@ -1,6 +1,6 @@
 {
   "name": "sign-check",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Check specified path sign with native current OS signing tools.",
   "main": "lib/index.js",
   "keywords": [
