@@ -16,3 +16,5 @@ package-lock.json
 __tests__
 .travis.yml
 .gitignore
+coverage
+.idea
