@@ -22,6 +22,7 @@
   "devDependencies": {
     "jest-cli": "^13.2.3"
   },
+  "author": "Oleg Kulyk, Shevchenko Tolik, Ihor Skliar",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/kami4ka/SignCheck/issues"
