@@ -38,5 +38,5 @@
   },
   "bin": {
     "sign-check": "./lib/cli.js"
-  },
+  }
 }

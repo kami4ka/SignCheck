@@ -29,6 +29,15 @@ SignCheck.checkWin(somePath).then(
 );
 ```
 
+
+## Usage as CLI tool
+
+Install the package globally: `npm install -g sign-check`.
+
+```sh
+	sign-check 'path/to/file'
+```
+
 ## Notes
 
 For Win verification used [sample](https://msdn.microsoft.com/en-us/library/aa382384(VS.85).aspx) code compiled to binary.
