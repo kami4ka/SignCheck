@@ -1,5 +1,5 @@
 # SignCheck
-
+[![NPM](https://img.shields.io/npm/v/sign-check.svg "NPM package version")](https://www.npmjs.com/package/sign-check)
 [![Build Status](https://travis-ci.org/kami4ka/SignCheck.svg?branch=master)](https://travis-ci.org/kami4ka/SignCheck)
 
 Check specified path sign with native current OS signing tools
