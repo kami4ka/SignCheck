@@ -9,7 +9,11 @@
     "check",
     "utility",
     "codesign",
-    "verify"
+    "verify",
+    "signature",
+    "certificate",
+    "security",
+    "verification"
   ],
   "repository": {
     "type": "git",
