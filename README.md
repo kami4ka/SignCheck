@@ -30,6 +30,17 @@ SignCheck.checkWin(somePath).then(
 );
 ```
 
+or use sync version of `checkMacSync` and `checkWinSync`
+
+```js
+try {
+    SignCheck.checkMacSync(somePath);
+    console.log('File is signed');
+} catch(error) {
+    console.log(error);
+    console.log('File is not signed');
+}
+```
 
 ## Usage as CLI tool
 
