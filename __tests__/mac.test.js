@@ -23,7 +23,7 @@ describe('Sign Check', () => {
         });
     });
 
-    it('should unsigned file', (done) => {
+    it('should return false on unsigned file', (done) => {
         SignCheck.checkMac(unsignedPath).then(isSigned => {
             expect(isSigned).toEqual(false);
             done();
@@ -32,4 +32,17 @@ describe('Sign Check', () => {
             done();
         });
     });
+
+    it('should not allow wrong path sync', () => {
+        expect(SignCheck.checkMacSync).toThrow();
+    });
+
+    it('should throw on unsigned file sync', () => {
+        expect(() => {SignCheck.checkMacSync(unsignedPath);}).toThrow();
+    });
+
+    // TODO: fix signed.data to be signed
+    // it('should return true signed file sync', (done) => {
+    //     expect(SignCheck.checkMacSync(signedPath)).toBeTruthy()
+    // });
 });
