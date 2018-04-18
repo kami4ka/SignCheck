@@ -36,7 +36,7 @@ or use sync version of `checkMacSync` and `checkWinSync`
 try {
     SignCheck.checkMacSync(somePath);
     console.log('File is signed');
-} catch(e) {
+} catch(error) {
     console.log(error);
     console.log('File is not signed');
 }
