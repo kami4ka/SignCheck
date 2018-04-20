@@ -33,12 +33,22 @@ describe('Sign Check', () => {
         });
     });
 
+    it('should extention not supported', (done) => {
+        SignCheck.checkMac(signedPath).then(isSigned => {
+            done();
+        }).catch(err => {
+            expect(err).toBeDefined();
+            done();
+        });
+    });
+
+
     it('should not allow wrong path sync', () => {
         expect(SignCheck.checkMacSync).toThrow();
     });
 
-    it('should throw on unsigned file sync', () => {
-        expect(() => {SignCheck.checkMacSync(unsignedPath);}).toThrow();
+    it('should return false on unsigned file sync', () => {
+        expect(SignCheck.checkMacSync(unsignedPath)).toEqual(false);;
     });
 
     // TODO: fix signed.data to be signed
