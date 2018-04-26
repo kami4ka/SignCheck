@@ -27,13 +27,9 @@ SignCheck.check(somePath).then(
 or use sync version:
 
 ```js
-try {
-    SignCheck.checkSync(somePath);
-    console.log('File is signed');
-} catch(error) {
-    console.log(error);
-    console.log('File is not signed');
-}
+    const isSigned = SignCheck.checkSync(somePath);
+    console.log('File is signed: ', isSigned);
+
 ```
 
 ## Usage as CLI tool
