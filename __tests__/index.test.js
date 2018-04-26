@@ -13,34 +13,17 @@ describe('Sign Check', () => {
 
         expect(SignCheck.checkMac).not.toEqual(null);
         expect(SignCheck.checkMac).toBeDefined();
-    });
-});
 
-describe('Sign Check Wrong Os', () => {
-    beforeEach(() => {
-        jest.setMock('os', {
-            platform: () => constants.test.wrongPlatform
-        });
-        SignCheck = require('../lib/index');
-    });
+        expect(SignCheck.checkWinSync).not.toEqual(null);
+        expect(SignCheck.checkWinSync).toBeDefined();
 
-    it('should wrong platform on windows', (done) => {
-        SignCheck.checkWin(unsignedPath).then(res => {
-            expect(res).not.toBeDefined();
-            done();
-        }).catch(err => {
-            expect(err.message).toEqual(constants.errors.wrongPlatformWin);
-            done();
-        });
-    });
+        expect(SignCheck.checkMacSync).not.toEqual(null);
+        expect(SignCheck.checkMacSync).toBeDefined();
 
-    it('should wrong platform on macOs', (done) => {
-        SignCheck.checkMac(unsignedPath).then(res => {
-            expect(res).not.toBeDefined();
-            done();
-        }).catch(err => {
-            expect(err.message).toEqual(constants.errors.wrongPlatformMac);
-            done();
-        });
+        expect(SignCheck.check).not.toEqual(null);
+        expect(SignCheck.check).toBeDefined();
+
+        expect(SignCheck.checkSync).not.toEqual(null);
+        expect(SignCheck.checkSync).toBeDefined();
     });
 });
