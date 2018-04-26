@@ -14,8 +14,7 @@ const SignCheck = require('sign-check');
 
 const somePath = 'some/path/for/test';
 
-// for macOS
-SignCheck.checkMac(somePath).then(
+SignCheck.check(somePath).then(
     (isSigned) => {
         console.log('File sign status ' + isSigned);
     },
@@ -23,18 +22,13 @@ SignCheck.checkMac(somePath).then(
         console.log(error);
     }
 );
-
-//Same behavior for win function
-SignCheck.checkWin(somePath).then(
-...
-);
 ```
 
-or use sync version of `checkMacSync` and `checkWinSync`
+or use sync version:
 
 ```js
 try {
-    SignCheck.checkMacSync(somePath);
+    SignCheck.checkSync(somePath);
     console.log('File is signed');
 } catch(error) {
     console.log(error);
